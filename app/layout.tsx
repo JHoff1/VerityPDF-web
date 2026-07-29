@@ -3,16 +3,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.URL || "https://sovereignpdf.netlify.app"),
-  title: "SovereignPDF — Private PDF editing, on your device",
+  title: "VerityPDF — Private PDF editing, on your device",
   description: "A free, open-source desktop PDF editor with no cloud uploads, telemetry, accounts, or subscriptions.",
   openGraph: {
-    title: "SovereignPDF — Private PDF editing, on your device",
+    title: "VerityPDF — Private PDF editing, on your device",
     description: "A free, open-source desktop PDF editor with no cloud uploads, telemetry, accounts, or subscriptions.",
-    images: [{ url: "/og.png", width: 1792, height: 930, alt: "SovereignPDF — Private PDF editing, on your device" }],
+    images: [{ url: "/og.png", width: 1792, height: 930, alt: "VerityPDF — Private PDF editing, on your device" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SovereignPDF — Private PDF editing, on your device",
+    title: "VerityPDF — Private PDF editing, on your device",
     description: "A free, open-source desktop PDF editor with no cloud uploads, telemetry, accounts, or subscriptions.",
     images: ["/og.png"],
   },

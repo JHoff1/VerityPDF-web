@@ -1,6 +1,23 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22 19.2727C22 20.779 20.779 22 19.2727 22H14.7273C13.221 22 12 20.779 12 19.2727V12H19.2727C20.779 12 22 13.221 22 14.7273V19.2727Z" fill="#68C4FF"/>
-<path d="M20 2C21.1046 2 22 2.89543 22 4V7C22 8.10457 21.1046 9 20 9H17C15.8954 9 15 8.10457 15 7V4C15 2.89543 15.8954 2 17 2H20Z" fill="#0C79D8"/>
-<path d="M7 15C8.10457 15 9 15.8954 9 17V20C9 21.1046 8.10457 22 7 22H4C2.89543 22 2 21.1046 2 20V17C2 15.8954 2.89543 15 4 15H7Z" fill="#0C79D8"/>
-<path d="M12 12H4.72727C3.22104 12 2 10.779 2 9.27273V4.72727C2 3.22104 3.22104 2 4.72727 2H9.27273C10.779 2 12 3.22104 12 4.72727V12Z" fill="#2E9EFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="copper-left" x1="180" y1="180" x2="520" y2="870" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffad79"/>
+      <stop offset=".48" stop-color="#e85b2c"/>
+      <stop offset="1" stop-color="#9f2f1b"/>
+    </linearGradient>
+    <linearGradient id="copper-right" x1="820" y1="170" x2="530" y2="890" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff9a62"/>
+      <stop offset=".52" stop-color="#d94a24"/>
+      <stop offset="1" stop-color="#842317"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="700" y1="170" x2="780" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffd0ad"/>
+      <stop offset="1" stop-color="#ef6a39"/>
+    </linearGradient>
+  </defs>
+  <path d="M128 190h250l138 408L290 874Z" fill="url(#copper-left)"/>
+  <path d="M896 190H650L508 598l226 276Z" fill="url(#copper-right)"/>
+  <path d="M650 190h246L742 410H650Z" fill="url(#fold)"/>
+  <path d="m650 410 92 0 154-220-88 302Z" fill="#741b14"/>
+  <path d="M128 190 290 874l218 76 226-76 162-684" fill="none" stroke="#ffb080" stroke-opacity=".6" stroke-width="12" stroke-linejoin="round"/>
 </svg>
