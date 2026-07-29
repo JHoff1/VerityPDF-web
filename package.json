@@ -2,6 +2,11 @@
   "name": "veritypdf-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.veritypdf.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JHoff1/VerityPDF-web.git"
+  },
   "engines": {
     "node": ">=22.13.0"
   },

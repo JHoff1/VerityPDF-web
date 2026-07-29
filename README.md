@@ -1,8 +1,9 @@
 # VerityPDF website
 
-Source for the public VerityPDF product website. It presents the local-first
-desktop PDF editor, links to the latest GitHub release, and documents the
-project's privacy and open-source commitments.
+Source for the public VerityPDF product website at
+[veritypdf.com](https://www.veritypdf.com/). It presents the local-first desktop
+PDF editor, links to the latest GitHub release, and documents the project's
+privacy and open-source commitments.
 
 ## Local development
 

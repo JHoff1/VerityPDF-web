@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.URL || "https://sovereignpdf.netlify.app"),
+  metadataBase: new URL("https://www.veritypdf.com"),
   title: "VerityPDF — Private PDF editing, on your device",
   description: "A free, open-source desktop PDF editor with no cloud uploads, telemetry, accounts, or subscriptions.",
   openGraph: {
