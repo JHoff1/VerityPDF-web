@@ -25,9 +25,9 @@ export function ScreenshotCarousel() {
   }, []);
 
   return (
-    <section className="carousel" aria-label="SovereignPDF application screenshots">
+    <section className="carousel" aria-label="VerityPDF application screenshots">
       <div className="carousel-bar"><span>{slide.label}</span><span>{active + 1} / {slides.length}</span></div>
-      <img src={slide.src} alt={`${slide.label} in SovereignPDF`} />
+      <img src={slide.src} alt={`${slide.label} in VerityPDF`} />
       <div className="carousel-controls" aria-label="Choose a screenshot">
         <div className="carousel-numbers"><button className="carousel-arrow" type="button" onClick={() => show(active - 1)} aria-label="Show previous screenshot">←</button>{slides.map((item, index) => <button key={item.src} className={index === active ? "active" : ""} type="button" onClick={() => show(index)} aria-label={`Show ${item.label}`} aria-pressed={index === active}>{index + 1}</button>)}<button className="carousel-arrow" type="button" onClick={() => show(active + 1)} aria-label="Show next screenshot">→</button></div>
       </div>
