@@ -20,7 +20,7 @@ test("production output carries the VerityPDF brand", async () => {
 test("download links use the rebranded stable release filenames", async () => {
   const page = await readFile(new URL("app/page.tsx", root), "utf8");
 
-  assert.match(page, /VerityPDF-Setup\.exe/);
+  assert.match(page, /VerityPDF\.exe/);
   assert.match(page, /VerityPDF\.dmg/);
   assert.match(page, /VerityPDF\.AppImage/);
   assert.match(page, /VerityPDF\.deb/);
