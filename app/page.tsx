@@ -8,7 +8,7 @@ const repositoryUrl = "https://github.com/JHoff1/VerityPDF";
 const downloadUrl = (fileName: string) => `${releaseUrl}/download/${fileName}`;
 const privacyUrl = `${repositoryUrl}/blob/main/PRIVACY.md`;
 const licenseUrl = `${repositoryUrl}/blob/main/LICENSE`;
-const RELEASE_REVALIDATE_SECONDS = 60 * 60 * 12;
+const RELEASE_REVALIDATE_SECONDS = 60 * 60 * 2;
 
 type GitHubRelease = {
   tag_name?: unknown;
