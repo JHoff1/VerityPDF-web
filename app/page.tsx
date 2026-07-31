@@ -5,6 +5,8 @@ const releaseUrl = "https://github.com/JHoff1/VerityPDF/releases/latest";
 const releaseApiUrl =
   "https://api.github.com/repos/JHoff1/VerityPDF/releases/latest";
 const repositoryUrl = "https://github.com/JHoff1/VerityPDF";
+const microsoftStoreUrl =
+  "https://apps.microsoft.com/detail/9NTJ3VJLH22M?hl=en-us&gl=US&ocid=pdpshare";
 const downloadUrl = (fileName: string) => `${releaseUrl}/download/${fileName}`;
 const privacyUrl = `${repositoryUrl}/blob/main/PRIVACY.md`;
 const licenseUrl = `${repositoryUrl}/blob/main/LICENSE`;
@@ -92,7 +94,10 @@ export default async function Home() {
           <p>Download for your OS</p>
           <div className="download-links">
             <a href={downloadUrl("VerityPDF.exe")}>
-              Windows{versionSuffix}
+              Windows installer{versionSuffix}
+            </a>
+            <a href={microsoftStoreUrl}>
+              Microsoft Store
             </a>
             <a href={downloadUrl("VerityPDF.dmg")}>
               macOS{versionSuffix}

@@ -26,6 +26,11 @@ test("download links use the rebranded stable release filenames", async () => {
   assert.match(page, /VerityPDF\.AppImage/);
   assert.match(page, /VerityPDF\.deb/);
   assert.match(page, /JHoff1\/VerityPDF/);
+  assert.match(
+    page,
+    /https:\/\/apps\.microsoft\.com\/detail\/9NTJ3VJLH22M\?hl=en-us&gl=US&ocid=pdpshare/,
+  );
+  assert.match(page, /Microsoft Store/);
 });
 
 test("latest release metadata is refreshed every two hours with a fallback", async () => {
