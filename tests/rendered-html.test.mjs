@@ -30,7 +30,12 @@ test("download links use the rebranded stable release filenames", async () => {
     page,
     /https:\/\/apps\.microsoft\.com\/detail\/9NTJ3VJLH22M\?hl=en-us&gl=US&ocid=pdpshare/,
   );
-  assert.match(page, /Microsoft Store/);
+  assert.match(
+    page,
+    /Prefer the Microsoft Store\? Get VerityPDF from Microsoft →/,
+  );
+  assert.match(page, /Windows\{versionSuffix\}/);
+  assert.doesNotMatch(page, /Windows installer\{versionSuffix\}/);
 });
 
 test("latest release metadata is refreshed every two hours with a fallback", async () => {

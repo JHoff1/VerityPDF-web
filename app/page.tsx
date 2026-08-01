@@ -83,9 +83,14 @@ export default async function Home() {
           cloud uploads, accounts, telemetry, or subscriptions.
         </p>
         <div className="actions">
-          <a className="button" href={downloadUrl("VerityPDF.exe")}>
-            {primaryDownloadLabel}
-          </a>
+          <div className="primary-download">
+            <a className="button" href={downloadUrl("VerityPDF.exe")}>
+              {primaryDownloadLabel}
+            </a>
+            <a className="store-link" href={microsoftStoreUrl}>
+              Prefer the Microsoft Store? Get VerityPDF from Microsoft →
+            </a>
+          </div>
           <a className="plain-link" href={repositoryUrl}>
             View source →
           </a>
@@ -94,10 +99,7 @@ export default async function Home() {
           <p>Download for your OS</p>
           <div className="download-links">
             <a href={downloadUrl("VerityPDF.exe")}>
-              Windows installer{versionSuffix}
-            </a>
-            <a href={microsoftStoreUrl}>
-              Microsoft Store
+              Windows{versionSuffix}
             </a>
             <a href={downloadUrl("VerityPDF.dmg")}>
               macOS{versionSuffix}
