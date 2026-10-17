@@ -15,6 +15,16 @@ function detectDownload(version: string) : DownloadTarget {
   const userAgent = navigator.userAgent.toLowerCase();
   const suffix = version ? ` ${version}` : "";
 
+  // Small screens already show every platform option directly below this CTA.
+  // A generic button avoids implying that an iPhone can install the macOS app.
+  if (window.matchMedia("(max-width: 760px)").matches) {
+    return {
+      href: releaseUrl,
+      label: `Download latest version${suffix}`,
+      showStoreLink: false,
+    };
+  }
+
   if (userAgent.includes("linux")) {
     return { href: `${releaseUrl}/download/VerityPDF.AppImage`, label: `Download VerityPDF${suffix} for Linux`, showStoreLink: false };
   }
@@ -30,7 +40,13 @@ function detectDownload(version: string) : DownloadTarget {
 export function PrimaryDownload({ version }: { version: string }) {
   const [target, setTarget] = useState<DownloadTarget>({ href: releaseUrl, label: "Download latest version", showStoreLink: false });
 
-  useEffect(() => setTarget(detectDownload(version)), [version]);
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setTarget(detectDownload(version));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [version]);
 
   return (
     <div className="primary-download">
