@@ -58,7 +58,7 @@ export default async function Home() {
     <main className="shell">
       <nav>
         <a className="brand" href="#top">
-          <img src="/app-icon.png" alt="" />
+          <img src="/app-icon.png" alt="VerityPDF logo" />
           VerityPDF
         </a>
         <div>
