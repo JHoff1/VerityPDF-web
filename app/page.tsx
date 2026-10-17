@@ -1,48 +1,11 @@
 import type { Metadata } from "next";
 import { ScreenshotCarousel } from "./ScreenshotCarousel";
-import { PrimaryDownload } from "./PrimaryDownload";
+import { ReleaseDownloads } from "./ReleaseDownloads";
 
 const releaseUrl = "https://github.com/JHoff1/VerityPDF/releases/latest";
-const releaseApiUrl =
-  "https://api.github.com/repos/JHoff1/VerityPDF/releases/latest";
 const repositoryUrl = "https://github.com/JHoff1/VerityPDF";
-const downloadUrl = (fileName: string) => `${releaseUrl}/download/${fileName}`;
 const privacyUrl = `${repositoryUrl}/blob/main/PRIVACY.md`;
 const licenseUrl = `${repositoryUrl}/blob/main/LICENSE`;
-const RELEASE_REVALIDATE_SECONDS = 60 * 60 * 2;
-
-type GitHubRelease = {
-  tag_name?: unknown;
-};
-
-async function getLatestReleaseVersion() {
-  try {
-    const response = await fetch(releaseApiUrl, {
-      headers: {
-        Accept: "application/vnd.github+json",
-      },
-      next: {
-        revalidate: RELEASE_REVALIDATE_SECONDS,
-      },
-    });
-
-    if (!response.ok) return null;
-
-    const release = (await response.json()) as GitHubRelease;
-    if (
-      typeof release.tag_name !== "string" ||
-      !/^v?\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/.test(release.tag_name)
-    ) {
-      return null;
-    }
-
-    return release.tag_name.startsWith("v")
-      ? release.tag_name
-      : `v${release.tag_name}`;
-  } catch {
-    return null;
-  }
-}
 
 export const metadata: Metadata = {
   title: "VerityPDF - Private PDF editing",
@@ -50,10 +13,7 @@ export const metadata: Metadata = {
     "A free, open-source desktop PDF editor that keeps your documents on your device.",
 };
 
-export default async function Home() {
-  const latestVersion = await getLatestReleaseVersion();
-  const versionSuffix = latestVersion ? ` ${latestVersion}` : "";
-
+export default function Home() {
   return (
     <main className="shell">
       <nav>
@@ -79,25 +39,10 @@ export default async function Home() {
           cloud uploads, accounts, telemetry, or subscriptions.
         </p>
         <div className="actions">
-          <PrimaryDownload version={latestVersion ?? ""} />
+          <ReleaseDownloads />
           <a className="plain-link" href={repositoryUrl}>
             View source →
           </a>
-        </div>
-        <div className="download" id="downloads">
-          <p>Download for your OS</p>
-          <div className="download-links">
-            <a href={downloadUrl("VerityPDF.exe")}>
-              Windows{versionSuffix}
-            </a>
-            <a href={downloadUrl("VerityPDF.dmg")}>
-              macOS{versionSuffix}
-            </a>
-            <a href={downloadUrl("VerityPDF.AppImage")}>
-              AppImage{versionSuffix}
-            </a>
-            <a href={downloadUrl("VerityPDF.deb")}>DEB{versionSuffix}</a>
-          </div>
         </div>
       </section>
 
