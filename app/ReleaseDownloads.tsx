@@ -23,7 +23,7 @@ function formatVersion(tagName: unknown) {
   return tagName.startsWith("v") ? tagName : `v${tagName}`;
 }
 
-export function ReleaseDownloads() {
+export function ReleaseDownloads({ sourceUrl }: { sourceUrl: string }) {
   const [version, setVersion] = useState("");
 
   useEffect(() => {
@@ -52,7 +52,12 @@ export function ReleaseDownloads() {
 
   return (
     <>
-      <PrimaryDownload version={version} />
+      <div className="actions">
+        <PrimaryDownload version={version} />
+        <a className="plain-link" href={sourceUrl}>
+          View source →
+        </a>
+      </div>
       <div className="download" id="downloads">
         <p>Download for your OS</p>
         <div className="download-links">

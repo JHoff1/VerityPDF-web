@@ -38,12 +38,7 @@ export default function Home() {
           VerityPDF lets you edit, merge, organize, and redact PDFs without
           cloud uploads, accounts, telemetry, or subscriptions.
         </p>
-        <div className="actions">
-          <ReleaseDownloads />
-          <a className="plain-link" href={repositoryUrl}>
-            View source →
-          </a>
-        </div>
+        <ReleaseDownloads sourceUrl={repositoryUrl} />
       </section>
 
       <ScreenshotCarousel />
