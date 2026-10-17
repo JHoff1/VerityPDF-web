@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { ScreenshotCarousel } from "./ScreenshotCarousel";
+import { PrimaryDownload } from "./PrimaryDownload";
 
 const releaseUrl = "https://github.com/JHoff1/VerityPDF/releases/latest";
 const releaseApiUrl =
   "https://api.github.com/repos/JHoff1/VerityPDF/releases/latest";
 const repositoryUrl = "https://github.com/JHoff1/VerityPDF";
-const microsoftStoreUrl =
-  "https://apps.microsoft.com/detail/9NTJ3VJLH22M?hl=en-us&gl=US&ocid=pdpshare";
 const downloadUrl = (fileName: string) => `${releaseUrl}/download/${fileName}`;
 const privacyUrl = `${repositoryUrl}/blob/main/PRIVACY.md`;
 const licenseUrl = `${repositoryUrl}/blob/main/LICENSE`;
@@ -53,9 +52,6 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const latestVersion = await getLatestReleaseVersion();
-  const primaryDownloadLabel = latestVersion
-    ? `Download VerityPDF ${latestVersion} for Windows`
-    : "Download latest version";
   const versionSuffix = latestVersion ? ` ${latestVersion}` : "";
 
   return (
@@ -83,14 +79,7 @@ export default async function Home() {
           cloud uploads, accounts, telemetry, or subscriptions.
         </p>
         <div className="actions">
-          <div className="primary-download">
-            <a className="button" href={downloadUrl("VerityPDF.exe")}>
-              {primaryDownloadLabel}
-            </a>
-            <a className="store-link" href={microsoftStoreUrl}>
-              Prefer the Microsoft Store? Get VerityPDF from Microsoft →
-            </a>
-          </div>
+          <PrimaryDownload version={latestVersion ?? ""} />
           <a className="plain-link" href={repositoryUrl}>
             View source →
           </a>
